@@ -32,10 +32,12 @@ filename () {
 }
 
 bashrc() {
-	if [ $1 != '-r' ]; then
-		$EDITOR ~/.bashrc
+	if [[ $1 != '-r' ]]; then
+		$EDITOR ~/.bashrc_extras
 	fi
-	source ~/.bashrc
+	if test -e ~/.bashrc_extras; then
+		source ~/.bashrc_extras
+	fi
 }
 
 venv () {
