@@ -7,5 +7,5 @@ bin/django_bash_completion:
 	cd bin && curl -O http://code.djangoproject.com/svn/django/trunk/extras/django_bash_completion
 
 install: all
-	cp .bashrc .inputrc .gitconfig $(HOME)
+	cp .bash_profile .bashrc .inputrc .gitconfig $(HOME)
 	mkdir -p $(HOME)/bin && cp bin/* $(HOME)/bin/
