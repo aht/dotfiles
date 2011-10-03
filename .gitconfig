@@ -16,9 +16,9 @@
 	ds = diff --stat
 	dt = describe --tags
 	fp = format-patch
-	l = log --pretty='tformat:%h %an: %s'
-	ld = log --pretty='tformat:%h %an: %s' --since='12 hours ago'
-	ly = log --pretty='tformat:%h %an: %s' --since=yesterday
+	l = log
+	ld = log --since='12 hours ago'
+	ly = log --since=yesterday
 	lp = log -p --reverse
 	ls = ls-files
 	mt = mergetool
@@ -28,6 +28,8 @@
 	ss = show --stat
 	rank = shortlog -sn --no-merges
 	w = whatchanged --reverse
+[format]
+	pretty = %C(yellow)%h%Creset %an: %s
 [merge]
 	summary = true
 	tool = "p4merge"
