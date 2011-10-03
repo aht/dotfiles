@@ -1,0 +1,18 @@
+#!/bin/sh
+# Find files matching pattern in some dir, usage:
+# 	ff
+#	ff $dir
+#	ff $dir $pattern
+if [ -n "$2" ]
+then
+    DIR=$1
+    PAT=$2
+    shift
+    shift
+    exec find "$DIR" -iregex "$PAT" "$@"
+elif [ -n "$1" ]
+then
+    exec find "$1" -type f
+else
+    exec find -type f
+fi

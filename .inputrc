@@ -1,0 +1,8 @@
+"\e[A": history-search-backward		# up
+"\e[B": history-search-forward		# down
+
+"\e[5A": beginning-of-history		# C-up
+"\e[5B": end-of-history			# C-down
+
+"\e[5C": forward-word			# C-left
+"\e[5D": backward-word			# C-right

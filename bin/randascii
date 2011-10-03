@@ -1,0 +1,2 @@
+#!/bin/sh
+head -c 50 /dev/random | tr -cd "A-Za-z0-9@#\!\$%^&*()_+=-~;,.<>/[]{}|?:'\\\`" && echo

@@ -1,0 +1,3 @@
+#!/usr/bin/env python
+import urllib, sys
+print urllib.quote(sys.stdin.read())

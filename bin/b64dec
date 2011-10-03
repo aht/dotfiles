@@ -1,0 +1,3 @@
+#!/usr/bin/env python
+import base64, sys
+base64.decode(sys.stdin, sys.stdout)

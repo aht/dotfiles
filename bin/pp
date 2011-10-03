@@ -1,0 +1,2 @@
+#!/bin/sh
+exec awk -F: '{print $1":"$2}' | while read line; do plumb $line; done

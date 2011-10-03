@@ -1,0 +1,47 @@
+[user]
+	name = Trinh Hai-Anh
+         email = trinh.haianh@skunkworks.vn
+[core]
+	pager = cat
+[alias] 
+	amend = commit --amend
+	a = add -A
+	b = branch
+	c =  commit
+	co = checkout
+	cp = cherry-pick
+	d = diff
+	dw = diff --color-words
+	dc = diff --cached
+	ds = diff --stat
+	dt = describe --tags
+	fp = format-patch
+	l = log --pretty='tformat:%h %an: %s'
+	ld = log --pretty='tformat:%h %an: %s' --since='12 hours ago'
+	ly = log --pretty='tformat:%h %an: %s' --since=yesterday
+	lp = log -p --reverse
+	ls = ls-files
+	mt = mergetool
+	s = status
+	sd = svn dcommit
+	sr = svn rebase
+	ss = show --stat
+	rank = shortlog -sn --no-merges
+	w = whatchanged --reverse
+[merge]
+	summary = true
+	tool = "p4merge"
+[mergetool "p4merge"]
+	cmd = /usr/local/bin/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	keepBackup = false
+	trustExitCode = false
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	log = auto
+	status = auto
+	branch = auto
+[grep]
+	lineNumber = true
+	extendedRegexp = true

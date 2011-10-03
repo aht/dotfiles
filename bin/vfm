@@ -1,0 +1,8 @@
+#!/bin/sh
+files=`git ls-files "$@" | grep -v vendor/ | dmenu -b -l 20 -i` 
+if test -n "$files"
+then
+    exec gvim "$files"
+else
+    exit 0
+fi
