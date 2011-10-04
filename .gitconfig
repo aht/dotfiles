@@ -16,10 +16,10 @@
 	ds = diff --stat
 	dt = describe --tags
 	fp = format-patch
-	l = log --pretty=format:'%C(yellow)%h%Creset %an: %s'
-	ld = log --pretty=format:'%C(yellow)%h%Creset %an: %s'  --since='12 hours ago'
-	ly = log --pretty=format:'%C(yellow)%h%Creset %an: %s'  --since=yesterday
-	lp = log --pretty=format:'%C(yellow)%h%Creset %an: %s'  -p --reverse
+	l = log --pretty=tformat:'%C(yellow)%h%Creset %an: %s'
+	ld = log --pretty=tformat:'%C(yellow)%h%Creset %an: %s'  --since='12 hours ago'
+	ly = log --pretty=tformat:'%C(yellow)%h%Creset %an: %s'  --since=yesterday
+	lp = log --pretty=tformat:'%C(yellow)%h%Creset %an: %s'  -p --reverse
 	ls = ls-files
 	mt = mergetool
 	s = status
