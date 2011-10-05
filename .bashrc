@@ -51,7 +51,6 @@ includes=(
 	~/.bashrc_extras
 	~/bin/git-completion.bash
 	~/bin/django_bash_completion
-	~/bin/dictutils.bash
 )
 
 for f in ${includes[*]}; do
