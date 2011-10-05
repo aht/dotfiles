@@ -1,6 +1,6 @@
 case $TERM in
     9term) export PS1='\u ---> (\h) \w\nexpr $?; ' ;;
-    xterm*) export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;34m\]\w\[\033[1;34m\]\nexpr $?; \[\033[0m\] ';;
+    xterm*) export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?; \[\033[0m\] ';;
 esac
 
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
