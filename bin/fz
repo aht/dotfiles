@@ -1,5 +1,5 @@
 #!/bin/sh
-if [ $# -le 1 ]; then
+if [ $# -lt 1 ]; then
 	echo Usage: fz [pattern] [basepath]
 	exit -1
 fi
