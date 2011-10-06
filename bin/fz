@@ -1,5 +1,9 @@
 #!/bin/sh
+if [ $# -le 1 ]; then
+	echo Usage: fz [pattern] [basepath]
+	exit -1
+fi
 PAT=$1
-shift
+DIR=$([ -n "$2" ] && echo $2 || git rev-parse --show-toplevel 2>/dev/null || echo .)
 PAT=$(echo "$PAT" | globify)
-exec find . -ipath "$PAT" "$@" | sort
+exec find $DIR -ipath "$PAT" | sort

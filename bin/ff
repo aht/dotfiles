@@ -14,5 +14,5 @@ elif [ -n "$1" ]
 then
     exec find "$1" -type f
 else
-    exec find -type f
+    exec find $(git rev-parse --show-toplevel 2>/dev/null || echo .) -type f
 fi
