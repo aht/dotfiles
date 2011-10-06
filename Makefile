@@ -9,3 +9,6 @@ bin/django_bash_completion:
 	cd bin && curl -O http://code.djangoproject.com/svn/django/trunk/extras/django_bash_completion
 
 completion: bin/git-completion.bash bin/django_bash_completion
+
+clean:
+	rm -f bin/git-completion.bash bin/django_bash_completion
