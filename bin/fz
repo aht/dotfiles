@@ -2,4 +2,4 @@
 PAT=$1
 shift
 PAT=$(echo "$PAT" | globify)
-exec find -ipath "$PAT" "$@" | sort
+exec find . -ipath "$PAT" "$@" | sort

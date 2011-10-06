@@ -1,3 +1,3 @@
-#!/usr/local/plan9/bin/sed -f
+#!/usr/bin/env 9 sed -f
 
 s!(/?)([^/\.]+)((/|\.)?)!\1*\2*\3!g
