@@ -4,8 +4,8 @@
 [core]
 	pager = cat
 [alias] 
-	amend = commit --amend
 	a = add -A
+	amend = !git commit --amend -m "$(cat $(git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG)"
 	b = branch
 	c =  commit
 	co = checkout
