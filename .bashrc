@@ -18,6 +18,15 @@ alias -- -='popd >/dev/null || cd -'
 alias ls='ls -F'
 alias ds='dirs -v'
 
+function h() {
+    if [ -z "$@" ]
+    then
+        history
+    else
+        history | grep "$@" | grep -vE "^ *[0-9]+ +h $@"
+    fi
+}
+
 rgrep () {
     grep -n "$1" $(find . -name "$2")
 }
