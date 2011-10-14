@@ -1,2 +1,2 @@
 #!/bin/sh
-exec git grep "(def|class|func) $@"
+exec git grep -iE "(def|class|func(tion)?) $@"

@@ -3,7 +3,8 @@
          email = trinh.haianh@skunkworks.vn
 [core]
 	pager = cat
-[alias] 
+	editor = vi
+[alias]
 	a = add -A
 	amend = !git commit --amend -m \"$(cat $(git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG)\"
 	b = branch
