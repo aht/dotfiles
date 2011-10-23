@@ -64,7 +64,7 @@ includes=(
 
 for f in ${includes[*]}; do
 	if test -e "$f"; then
-		echo ".bashrc: including $f"
+		if [ "$TERM" != "dumb" ]; then echo ".bashrc: including $f"; fi
 		source "$f"
 	fi
 done
