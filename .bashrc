@@ -21,9 +21,9 @@ alias ds='dirs -v'
 function h() {
     if [ -z "$@" ]
     then
-        history
+        history 20
     else
-        history | grep "$@" | grep -vE "^ *[0-9]+ +h $@"
+        history | grep "$@" | grep -vE "^ *[0-9]+ +h $@" | tail -n 20
     fi
 }
 
