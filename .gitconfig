@@ -21,7 +21,7 @@
 	l = log --pretty=tformat:'%h %an: %s'
 	ld = log --pretty=tformat:'%h %an: %s'  --since='12 hours ago'
 	ly = log --pretty=tformat:'%h %an: %s'  --since=yesterday
-	lp = log --pretty=tformat:'%h %an: %s'  -p --reverse
+	lp = log -p --reverse
 	ls = ls-files
 	mt = mergetool
 	s = status
