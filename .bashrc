@@ -1,13 +1,14 @@
 case $TERM in
-    9term) export PS1='\u ---> (\h) \w\nexpr $?; ' ;;
+    9term) export PS1='\u ---> (\h) \w\nexpr $?; '; export COLUMNS=30267 ;;
     xterm*) export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?;\[\033[0m\] ';;
 esac
 
+shopt -s histappend
+shopt -s checkwinsize
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 export HISTIGNORE="[ ]*:ls:ps:exit"
 export HISTFILESIZE=1000000
-shopt -s histappend
-shopt -s checkwinsize
+export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 alias ..='cd ..'
 alias ...='cd ../..'
