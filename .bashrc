@@ -1,5 +1,5 @@
 case $TERM in
-    9term) export PS1='\u ---> (\h) \w\nexpr $?; '; export COLUMNS=30267 ;;
+    9term) export PS1='\u ---> (\h) \w\nexpr $?; '; stty cols 32067;;
     xterm*) export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?;\[\033[0m\] ';;
 esac
 
