@@ -2,5 +2,5 @@ These are RC files and scripts I cannot live without.
 
 USAGE: "make install".
 
-CAUTION: will overwrite existing files. Use .bashrc_extras to load
-extra stuff specific to each machine, if you wish.
+CAUTION: will overwrite existing files in ~/bin.
+"make install" only confirm overwriting of ~/.bash_profile, ~/.bashrc, ~/.inputrc and ~/.gitconfig
