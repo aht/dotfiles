@@ -1,4 +1,4 @@
-all: ext/git-completion.bash
+all: ext/git-completion.bash ext/virtualenv.py
 
 install:
 	cp -i .bash_profile .bashrc .inputrc .gitconfig $(HOME); exit 0
@@ -11,6 +11,9 @@ ext/git-completion.bash:
 
 ext/django_bash_completion:
 	cd ext && curl -O http://code.djangoproject.com/svn/django/trunk/extras/django_bash_completion
+
+ext/virtualenv.py:
+	cd ext && curl -O https://raw.github.com/pypa/virtualenv/master/virtualenv.py
 
 clean:
 	rm -f ext/*
