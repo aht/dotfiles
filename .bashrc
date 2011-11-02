@@ -33,7 +33,7 @@ rgrep () {
 }
 
 pg () {
-    ps -p $(pgrep $@) 2>/dev/null
+    ps -fp $(pgrep $@) 2>/dev/null
 }
 
 ext () {
