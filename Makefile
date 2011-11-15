@@ -1,10 +1,10 @@
 all: ext/git-completion.bash ext/virtualenv.py
 
 install:
-	cp -i .bash_profile .bashrc .inputrc .gitconfig $(HOME); exit 0
+	cp -i .bash_profile .bashrc .inputrc .gitconfig .pythonrc.py $(HOME); exit 0
 	mkdir -p $(HOME)/bin
 	cp -v bin/* $(HOME)/bin/
-	if test -f ext/*; then cp -v ext/* $(HOME)/bin/; fi
+	if [ "$(shell ls ext)" ]; then cp -v ext/* $(HOME)/bin/; fi
 
 ext/git-completion.bash:
 	cd ext && curl -O https://raw.github.com/git/git/master/contrib/completion/git-completion.bash
