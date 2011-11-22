@@ -1,0 +1,4 @@
+\set PROMPT1 '; '
+\set PROMPT2 ';; '
+\set PROMPT3 ';;; '
+\pset pager off
