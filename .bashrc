@@ -1,13 +1,9 @@
-_cd () {
-    \cd "$@" &&
-    awd
-}
+export PATH=$PATH:~/dotfiles/bin
 
 case $TERM in
     9term)
         export PS1='\u ---> (\h) \w\nexpr $?; '
         
-        alias cd=_cd
         alias ls='ls -1F'
         
         # no column width wrapping or truncation for ps command etc.
