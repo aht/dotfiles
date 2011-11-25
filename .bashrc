@@ -1,6 +1,30 @@
+_cd () {
+    \cd "$@" &&
+    awd
+}
+
 case $TERM in
-    9term) export PS1='\u ---> (\h) \w\nexpr $?; '; stty cols 32067;;
-    xterm*) export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?;\[\033[0m\] ';;
+    9term)
+        export PS1='\u ---> (\h) \w\nexpr $?; '
+        
+        alias cd=_cd
+        alias ls='ls -1F'
+        
+        # no column width wrapping or truncation for ps command etc.
+        stty cols 32067
+        
+        # but we still want man pages nicely formatted
+        export MANWIDTH=80
+        
+        # cut the bs
+        export PAGER=nobs
+        
+        ;;
+    xterm*)
+        export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?;\[\033[0m\] '
+        
+        alias ls='ls -F'
+        ;;
 esac
 
 shopt -s histappend
@@ -16,7 +40,6 @@ alias +=pushd
 alias r='pushd +1'
 alias -- -='popd >/dev/null || cd -'
 
-alias ls='ls -F'
 alias ds='dirs -v'
 
 function h() {
