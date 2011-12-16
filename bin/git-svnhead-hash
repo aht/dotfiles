@@ -1,0 +1,2 @@
+#!/bin/sh
+git log --pretty='%h' --grep=^git-svn-id: --first-parent -1

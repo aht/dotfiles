@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(git-svnhead-id)-$(git log --pretty='%s' $(git-svnhead-hash).. | wc -l | xargs echo)-$(git-head)

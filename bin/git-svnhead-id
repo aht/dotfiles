@@ -1,0 +1,2 @@
+#!/bin/sh
+exec git log --grep=^git-svn-id: --first-parent -1 | awk -F'@| ' '/svn-id/ { print $7 }'
