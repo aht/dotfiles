@@ -1,9 +1,9 @@
 [user]
 	name = Trinh Hai-Anh
-         email = trinh.haianh@skunkworks.vn
+        email = trinh.haianh@skunkworks.vn
 [core]
 	pager = cat
-	editor = vi
+	editor = vim
 [alias]
 	a = add -A
 	amend = !git commit --amend -m \"$(cat $(git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG)\"
