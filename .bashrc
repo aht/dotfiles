@@ -33,7 +33,7 @@ export HISTFILESIZE=1000000
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # cycle through completion
-bind '"\t":menu-complete'
+# bind '"\t":menu-complete'
 
 alias ..='cd ..'
 alias ...='cd ../..'
