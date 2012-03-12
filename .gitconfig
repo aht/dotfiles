@@ -35,7 +35,7 @@
 	summary = true
 	tool = "p4merge"
 [mergetool "p4merge"]
-	cmd = /usr/local/bin/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+	cmd = p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
 	keepBackup = false
 	trustExitCode = false
 [color]
