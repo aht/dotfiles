@@ -1,0 +1,21 @@
+#!/bin/sh
+
+dir="~/dotfiles"
+repo="git@github.com:aht/dotfiles.git"
+
+for host in $@; do
+   echo "Pushing dotfiles to $1 ..."
+   ssh $host "
+       set -x
+       if [ -d $dir ]; then
+           cd $dir
+           git fetch
+           git merge origin/master
+           yes | make install
+       else
+           git clone $repo $dir
+           cd $dir
+           yes | make install
+       fi
+   "
+done;

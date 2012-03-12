@@ -20,6 +20,8 @@ case $TERM in
         export PS1='\[\033[1;32m\]\u\[\033[0m\] ---> (\h) \[\033[1;32m\]\w\[\033[1;34m\]\nexpr $?;\[\033[0m\] '
         
         alias ls='ls -F'
+        
+        9 fortune 2>/dev/null || fortune
         ;;
 esac
 
@@ -30,6 +32,9 @@ export HISTIGNORE="[ ]*:ls:ps:exit"
 export HISTFILESIZE=1000000
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 
+# cycle through completion
+bind '"\t":menu-complete'
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias +=pushd
@@ -37,6 +42,7 @@ alias r='pushd +1'
 alias -- -='popd >/dev/null || cd -'
 
 alias ds='dirs -v'
+alias sudoe='sudo env PATH=$PATH'
 
 function h() {
     if [ -z "$@" ]
@@ -77,7 +83,7 @@ venv () {
 }
 
 includes=(
-	~/.bashrc_extras
+	~/.bashrc_local
 	~/bin/git-completion.bash
 	~/bin/django_bash_completion
 )

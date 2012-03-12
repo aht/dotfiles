@@ -1,6 +1,24 @@
 These are RC files and scripts I cannot live without.
 
-USAGE: "make install".
+Design:
+    1. ~/.bash_profile will source ~/.bashrc
+    2. ~/.bashrc will source each file of the defined "includes" variable (which by default contains ~/.bashrc_local, ~/bin/git-completion.bash and others)
+    3. ~/.bashrc_local should be customized per-host, it may insert more files into the "includes" variable.
 
-CAUTION: will overwrite existing files in ~/bin.
-"make install" only confirm overwriting of ~/.bash_profile, ~/.bashrc, ~/.inputrc and ~/.gitconfig
+Manual usage:
+    # change some files
+    git commit && git push origin master
+    ssh host
+    git fetch
+    git merge origin/master
+    make install
+
+This will overwrite existing files in ~/bin, asking for confirmation only on overwriting of ~/.bashrc, ~/.inputrc and ~/.gitconfig. Make sure you backup them.
+
+Also 'make install' will not touch your ~/.bash_profile. If it doesn't source ~/.bashrc, you must add the line manually.
+
+Automatic push:
+    git commit && git push origin master
+    ./push host1 host2 ...
+
+This will force overwrite without any confirmation.
