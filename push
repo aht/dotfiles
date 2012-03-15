@@ -19,11 +19,17 @@ for host in $@; do
            cd $dir
            git fetch
            git merge origin/master
-           yes | make install 2>/dev/null
+           yes | make install
+           echo >&2  # last char of stderr is not newline
        else
            git clone $repo $dir
            cd $dir
-           yes | make install 2>/dev/null
+           yes | make install
+           echo >&2  # last char of stderr is not newline
        fi
-   "
-done;
+   " &
+done
+
+echo "[INFO] Waiting for all processes to complete ..."
+wait
+echo "[INFO] Done!"
