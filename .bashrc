@@ -1,4 +1,4 @@
-export PATH=$PATH:~/dotfiles/bin:~/bin
+export PATH=~/bin:~/dotfiles/bin:~/dotfiles/ext:$PATH
 
 case $TERM in
     9term)
