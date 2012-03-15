@@ -21,16 +21,19 @@ case $TERM in
         
         alias ls='ls -F'
         
-        9 fortune 2>/dev/null || fortune
+        (9 fortune || fortune) 2>/dev/null
         ;;
 esac
 
 shopt -s histappend
 shopt -s checkwinsize
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-export HISTIGNORE="[ ]*:ls:ps:exit"
+export HISTIGNORE="[ ]*:ls:exit:logout"
+export HISTSIZE=10000
 export HISTFILESIZE=1000000
+
 export VIRTUAL_ENV_DISABLE_PROMPT=true
+export PIP_RESPECT_VIRTUALENV=true
 
 # cycle through completion
 # bind '"\t":menu-complete'
