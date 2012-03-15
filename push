@@ -3,19 +3,27 @@
 dir="~/dotfiles"
 repo="git@github.com:aht/dotfiles.git"
 
+debug=0
+if [ "$1" = "-d" ]; then
+    debug=1
+    shift
+fi
+
 for host in $@; do
-   echo "Pushing dotfiles to $1 ..."
+   echo "[INFO] Pushing dotfiles to $host ..."
    ssh $host "
-       set -x
+       if [ $debug = 1 ]; then
+           set -x
+       fi
        if [ -d $dir ]; then
            cd $dir
            git fetch
            git merge origin/master
-           yes | make install
+           yes | make install 2>/dev/null
        else
            git clone $repo $dir
            cd $dir
-           yes | make install
+           yes | make install 2>/dev/null
        fi
    "
 done;
