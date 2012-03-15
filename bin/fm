@@ -1,4 +1,4 @@
 #!/bin/sh
-files=`git ls-files "$@" | grep -v vendor/ | dmenu -b -l 20 -i -xs`
+files=`git ls-files "$@" | grep -v vendor/ | dmenu -b -l 20 -i`
 plumb "$files" >/dev/null 2>&1
 exit 0
