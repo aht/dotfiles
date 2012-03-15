@@ -19,23 +19,26 @@ case $# in
 	exit 1
 esac
 
-~/dotfiles/bin/ps $flag | grep "^$user " | awk '
-	BEGIN { min = 1000000 };
-	{ 
-		line[0+nline++] = $0;
-		n = length;
-		sub(/ +/, "", $0);
-		n -= length;
-		if(n < min)
-			min = n;
-	}
-	END{
-		s = "";
-		for(i=0; i<min-1; i++)
-			s = s " ";
-		for(i=0; i<nline; i++){
-			sub(s, "", line[i])
-			print line[i]
-		}
-	}
-'
+~/dotfiles/bin/ps $flag | grep "^$user "
+
+# why this trickery?
+# | awk '
+# 	BEGIN { min = 1024 };
+# 	{
+# 		line[0+nline++] = $0;
+# 		n = length;
+# 		sub(/ +/, "", $0);
+# 		n -= length;
+# 		if(n < min)
+# 			min = n;
+# 	}
+# 	END{
+# 		s = "";
+# 		for(i=0; i<min-1; i++)
+# 			s = s " ";
+# 		for(i=0; i<nline; i++){
+# 			sub(s, "", line[i])
+# 			print line[i]
+# 		}
+# 	}
+# '
