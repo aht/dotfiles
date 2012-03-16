@@ -60,10 +60,6 @@ rgrep () {
     grep -n "$1" $(find . -name "$2")
 }
 
-pg () {
-    ps -fp $(pgrep $@) 2>/dev/null
-}
-
 ext () {
 	echo ${1##*.}
 }
