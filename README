@@ -3,7 +3,7 @@ These are RC files and scripts I cannot live without.
 Design:
     1. ~/.bash_profile will source ~/.bashrc
     2. ~/.bashrc will source each file of the defined "includes" variable (which by default contains ~/.bashrc_local, ~/bin/git-completion.bash and others)
-    3. ~/.bashrc_local should be customized per-host, it may insert more files into the "includes" variable.
+    3. ~/.bashrc_local should be customized per-host, it may insert more files to source in the "includes_local" variable.
 
 Manual usage:
     # change some files

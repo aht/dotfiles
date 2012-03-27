@@ -70,16 +70,17 @@ filename () {
 
 bashrc() {
 	if [[ $1 != '-r' ]]; then
-		$EDITOR ~/.bashrc_extras
+		$EDITOR ~/.bashrc_local
 	fi
-	if test -e ~/.bashrc_extras; then
-		source ~/.bashrc_extras
+	if test -e ~/.bashrc_local; then
+		source ~/.bashrc_local
 	fi
 }
 
 venv () {
     echo $VIRTUAL_ENV
 }
+
 
 includes=(
 	~/.bashrc_local
@@ -88,6 +89,13 @@ includes=(
 )
 
 for f in ${includes[*]}; do
+	if test -e "$f"; then
+		if [ "$TERM" != "dumb" ]; then echo ".bashrc: including $f"; fi
+		source "$f"
+	fi
+done
+
+for f in ${includes_local[*]}; do
 	if test -e "$f"; then
 		if [ "$TERM" != "dumb" ]; then echo ".bashrc: including $f"; fi
 		source "$f"
