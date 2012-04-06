@@ -6,7 +6,7 @@
 	editor = vim
 [alias]
 	a = add -A
-	amend = !git commit --amend -m \"$(cat $(git rev-parse --show-toplevel)/.git/COMMIT_EDITMSG)\"
+	amend = commit --amend
 	b = branch
 	c =  commit
 	co = checkout
