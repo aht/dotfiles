@@ -32,6 +32,7 @@ export HISTIGNORE="[ ]*:ls:exit:logout"
 export HISTSIZE=10000
 export HISTFILESIZE=1000000
 
+export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=true
 export PIP_RESPECT_VIRTUALENV=true
 
