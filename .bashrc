@@ -51,10 +51,13 @@ alias sudoe='sudo env PATH=$PATH'
 function h() {
     if [ -z "$@" ]
     then
-        history 20
+        history
     else
-        history | grep "$@" | grep -vE "^ *[0-9]+ +h $@" | tail -n 20
-    fi
+        history $HISTSIZE | grep -E  "$@" | grep -vE "^ *[0-9]+ +h $@" 
+    fi \
+    | sed -E 's/^[0-9]+  //g' \
+    | sort -u \
+    | tail -n 20
 }
 
 rgrep () {
