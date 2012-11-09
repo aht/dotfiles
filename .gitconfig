@@ -16,7 +16,7 @@
 	dc = diff --cached
 	ds = diff --stat
 	dt = describe --tags
-	fp = format-patch
+	f = fetch
 	g = grep
 	l = log --pretty=tformat:'%h %an: %s'
 	ld = log --pretty=tformat:'%h %an: %s'  --since='12 hours ago'
@@ -44,3 +44,5 @@
 [grep]
 	lineNumber = true
 	extendedRegexp = true
+[push]
+	default = upstream
