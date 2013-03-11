@@ -11,7 +11,7 @@ fi
 
 for host in $@; do
    echo "[INFO] Pushing dotfiles to $host ..."
-   ssh $host "
+   ssh "$host" "
        if [ $debug = 1 ]; then
            set -x
        fi
