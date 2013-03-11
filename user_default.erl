@@ -6,7 +6,7 @@
 %%
 %%    code:load_abs("/home/fritchie/erlang/user_default").
 
--export([help/0,dbgtc/1, dbgon/1, dbgon/2,
+-export([help/0,dbgtc/1, dbgtc_follow/1, dbgon/1, dbgon/2,
          dbgadd/1, dbgadd/2, dbgdel/1, dbgdel/2, dbgoff/0,
 	 dbg_ip_trace/1,
          l/0, mm/0, la/0]).
@@ -41,6 +41,16 @@ dbgtc(File) ->
                  io:format("~w: ~w~n", [A,B])
           end,
     dbg:trace_client(file, File, {Fun, []}).
+
+dbgtc_follow(File) ->
+    Fun = fun({trace,_,call,{M,F,A}}, _) ->
+                 io:format("call: ~w:~w~w~n", [M,F,A]);
+             ({trace,_,return_from,{M,F,A},R}, _) ->
+                 io:format("retn: ~w:~w/~w -> ~w~n", [M,F,A,R]);
+             (A,B) ->
+                 io:format("~w: ~w~n", [A,B])
+          end,
+    dbg:trace_client(follow_file, File, {Fun, []}).
 
 dbgon(Module) ->
     case dbg:tracer() of
