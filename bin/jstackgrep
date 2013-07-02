@@ -2,4 +2,4 @@
 pattern=$1
 pid=$2
 [ -e $pattern ] && [ -e $pid ] && echo "Usage: jstackgrep <pattern> <pid>" && exit 1
-jstack $pid | awk 'BEGIN {RS=""; FS="\n"} /bigr/ {print $0"\n\n"}' | grep -E "$pattern|\$" --color=auto
+jstack $pid | awk 'BEGIN {RS=""; FS="\n"} /'"$pattern"'/ {print $0"\n\n"}' | grep -E "$pattern|\$" --color=auto
